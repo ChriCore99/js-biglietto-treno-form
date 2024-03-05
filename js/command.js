@@ -41,7 +41,7 @@ submitElement.addEventListener('click', function(){
 
     // calcolo prezzo finale
     let prezzoFinale = prezzoBase - sconto;
-    console.log(prezzoFinale)
+    console.log(prezzoFinale.toFixed(2));
 
 });
 
@@ -55,6 +55,5 @@ console.log(nuovoElement);   //string - null
 // aggiunta del listener
 
 nuovoElement.addEventListener('click', function(){
-    console.log('aggiorna pagina');
+    window.location.reload(true);
 });
-
