@@ -1,20 +1,4 @@
-// recuperare nome e cognome inseriti dall'utente
-
-const nomeElement = document.getElementById('nome');
-
-// recuperare i km inseriti dall'utente
-
-const distanzaElement = document.getElementById('km');
-
-// calcolare il prezzo di base del biglietto
-
-// recuperare la fascia di età selezionata
-
-const anniElement = document.getElementById('anni');
-
-// applicare o meno lo sconto
-
-// stampare su html i dati del biglietto
+// stampare i dati del biglietto
 
 const submitElement = document.getElementById('invia');
 console.log(submitElement);   //string - null
@@ -24,9 +8,41 @@ console.log(submitElement);   //string - null
 submitElement.addEventListener('click', function(){
     console.log('ho cliccato');
 
-    console.log(nomeElement.value);   //string
-    console.log(distanzaElement.value);   //string
-    console.log(anniElement.value);   //string
+    // recuperare nome e cognome inseriti dall'utente
+
+    const nomeElement = document.getElementById('nome');
+    const nomeElementValue = nomeElement.value;    //string
+
+    // recuperare i km inseriti dall'utente
+
+    const distanzaElement = document.getElementById('km');
+    const distanzaElementValue = parseInt(distanzaElement.value);    //number
+
+    // calcolare il prezzo di base del biglietto
+
+    const prezzoBase = distanzaElementValue * 0.21;    //number
+
+    // recuperare la fascia di età selezionata
+
+    const anniElement = document.getElementById('anni');
+    const anniElementValue = anniElement.value;    //string
+
+    // calcolare o meno lo sconto
+
+    let sconto;
+
+    if (anniElementValue === 'minorenne'){ // Se io sono minorenne
+         sconto = prezzoBase * 0.20; // Applico lo sconto del 20%
+    } else if (anniElementValue === 'over65'){ // Se io sono over 65
+         sconto = prezzoBase * 0.40; // Applico lo sconto del 40%
+    } else {
+         sconto = 0; // Applico lo sconto nullo
+    }
+
+    // calcolo prezzo finale
+    let prezzoFinale = prezzoBase - sconto;
+    console.log(prezzoFinale)
+
 });
 
 // const prezzoFinale = 
