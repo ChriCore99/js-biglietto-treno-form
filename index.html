@@ -16,15 +16,19 @@
                 </div>
                 <div class="col">
                     <label for="km">Numero Km</label>
-                    <input name="km" id="km" type="text" placeholder="km" >
+                    <input name="km" id="km" type="number" placeholder="km" >
                 </div>
                 <div class="col">
                     <label for="anni">Fascia d'età</label>
-                    <input name="anni" id="anni" type="text" placeholder="anni" >
+                    <select name="anni" id="anni" aria-placeholder="anni">
+                        <option value="">Nessuno</option>
+                        <option value="">Minorenne</option>
+                        <option value="">Over-65</option>
+                    </select>
                 </div>
                 <div class="col">
-                    <input type="submit" value="invia" >
-                    <input type="submit" value="nuovo" >
+                    <input id="invia" type="submit" value="invia" >
+                    <input id="nuovo" type="submit" value="nuovo" >
                 </div>
             </div>
         </div>
